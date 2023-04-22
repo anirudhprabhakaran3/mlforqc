@@ -19,26 +19,26 @@ Here are the basic steps of the quantum teleportation process:
 
 The quantum teleportation protocol can be described mathematically using the following equations:
 
-The state of the input particle to be teleported is represented as:
-Q, |ψ⟩ = α|0⟩ + β|1⟩,
+The state of the input particle to be teleported is represented as: Q: |ψ⟩ = α|0⟩ + β|1⟩,
+
 where α and β are complex numbers that represent the probability amplitudes of the two basis states.
 
-The initial state of the entangled pair is represented as:
-q1,q2: |Φ+⟩ = (|00⟩ + |11⟩)/√2,
+The initial state of the entangled pair is represented as: q1,q2: |Φ+⟩ = (|00⟩ + |11⟩)/√2,
+
 where |0⟩ and |1⟩ are the two basis states of a qubit.
 
-The combined state of the 3 qubits Q, q1, q2 is:
-|ψ⟩ ⊗|Φ+⟩ = (1/√2) [ α(|000⟩+|011⟩) + β(|110⟩+|101⟩) ]
+The combined state of the 3 qubits Q, q1, q2 is: |ψ⟩ ⊗|Φ+⟩ = (1/√2) [ α(|000⟩+|011⟩) + β(|110⟩+|101⟩) ]
 
 We then apply the Hadamard gate H to Q to get the final amplitudes in a desirable form, to get the final combined state as:
+
 Combined state : (1/2) [ |00⟩[ α|0⟩+β|1⟩ ] + |01⟩[ β|0⟩+α|1⟩ ] + |10⟩[ α|0⟩-β|1⟩ ] + |11⟩[ -β|0⟩+α|1⟩ ] ]
 
 We notice that if we measure Q and q1, and let the combined state of the 3 qubits collapse, the resulting state of q2 can always be converted to the initial state of Q through basic quantum gates.
 
-** We can leave q2 as it is if the measurement result of Q, q1 is |00⟩,
-** We can apply an X gate when it is |01⟩
-** We can apply a Z gate when it is |10⟩
-** We can and apply gates X and Z consecutively when the measurement result is |11⟩.
+* We can leave q2 as it is if the measurement result of Q, q1 is |00⟩,
+* We can apply an X gate when it is |01⟩
+* We can apply a Z gate when it is |10⟩
+* We can and apply gates X and Z consecutively when the measurement result is |11⟩.
 
 Hence, by conveying the result of the measurement to Bob, appropriate gates can be applied to q2 which helps us teleport the original state of Q to Bob. The initial state of Q will been altered due to observations, which is consistent with the No Cloning Theorem.
 
@@ -60,9 +60,8 @@ Geometrically speaking, we can decompose the superposition into two components, 
 
 After that we can follow the following steps to increase the probability of finding the winner:
 
-** Apply query the phase Oracle, which reflects the current superposition state about |r⟩.
-** We the apply a reflection gate to perform reflection about teh original state |s⟩.
-(The net effect of these steps is that the superposition state is rotated by an angle of 2θ towards |w⟩)
-** We will repeat these steps t number of times, until we increase the amplitude of the winner state.
+* Apply query the phase Oracle, which reflects the current superposition state about |r⟩.
+* We the apply a reflection gate to perform reflection about teh original state |s⟩. (The net effect of these steps is that the superposition state is rotated by an angle of 2θ towards |w⟩)
+* We will repeat these steps t number of times, until we increase the amplitude of the winner state.
 
 It turns out that mathematically t ≈ √N . So the average time complexity is √N.
